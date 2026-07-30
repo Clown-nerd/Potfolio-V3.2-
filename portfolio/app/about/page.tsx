@@ -100,6 +100,9 @@ export default function About() {
               a student-level budget. The workflow itself is a competitive
               advantage.
             </p>
+            <p>
+              The models write drafts. I make the decisions.
+            </p>
           </div>
         </div>
       </section>

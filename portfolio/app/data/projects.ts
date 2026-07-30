@@ -42,7 +42,7 @@ export const projects: Project[] = [
     approach:
       "Implemented shared-schema multi-tenancy using PostgreSQL Row-Level Security (RLS) policies. Every table has a tenant_id column, and RLS policies enforce that queries only return rows belonging to the authenticated tenant. Drizzle ORM handles the schema migrations, and the auth layer injects tenant context into every database session.",
     outcome:
-      "12 active tenants running on a single Neon free-tier instance. Zero cross-tenant data incidents. Sub-100ms query times despite shared resources.",
+      "12 active tenants running on a single Neon free-tier instance. Zero cross-tenant data incidents. Sub-100ms query times despite shared resources. Built on the 8 GB machine — RLS was the only realistic path to multi-tenancy without spinning up separate databases.",
     stackRationale:
       "The platform leverages Next.js and TypeScript for a robust frontend, with PostgreSQL on Neon and Drizzle ORM to manage shared-schema multi-tenancy using Row-Level Security, all deployed on Vercel.",
     links: [
@@ -75,7 +75,7 @@ export const projects: Project[] = [
     approach:
       "Built scrapers to normalize tender data from multiple government portals into a unified PostgreSQL database. Added full-text search with pg_trgm for fuzzy matching, and a Next.js frontend with filters for entity, category, and deadline. Email notification workers handle alert subscriptions.",
     outcome:
-      "Thousands of tenders indexed and searchable. Used by civic organizations and journalists tracking procurement patterns in county governments.",
+      "Thousands of tenders indexed and searchable. Used by civic organizations and journalists tracking procurement patterns in county governments. Scrapers and full-text indexing ran on the 8 GB machine using pg_trgm — no dedicated search infrastructure needed.",
     stackRationale:
       "Built using Next.js, Node.js, and TypeScript, with PostgreSQL providing the data storage and full-text search capabilities, and Vercel for deployment.",
   },
@@ -106,7 +106,7 @@ export const projects: Project[] = [
     approach:
       "Designed a Fastify API layer that accepts financial data inputs and enqueues processing jobs through BullMQ. Workers handle reconciliation, validation, and report generation asynchronously. Redis manages queue state, and dead-letter queues capture failures for manual review. PostgreSQL stores all processed results with full audit trails.",
     outcome:
-      "Currently in development. Architecture designed to handle batch processing of financial data at scale, with built-in retry logic and audit compliance.",
+      "Currently in development. Architecture designed to handle batch processing of financial data at scale, with built-in retry logic and audit compliance. Queue-driven design chosen specifically to keep memory pressure low on the 8 GB machine — workers process jobs one at a time, not in parallel.",
     stackRationale:
       "A queue-driven architecture utilizing Node.js, Fastify, BullMQ, and Redis for asynchronous processing, backed by PostgreSQL and typed with TypeScript.",
   },
