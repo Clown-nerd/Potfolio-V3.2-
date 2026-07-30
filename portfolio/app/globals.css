@@ -29,6 +29,8 @@
   --text-primary:   hsl(40, 20%, 92%);
   --text-secondary: hsl(220, 10%, 55%);
   --text-tertiary:  hsl(220, 8%, 40%);
+  --bg-card: var(--bg-secondary);
+  --text-muted: var(--text-tertiary);
 
   /* Accent: Amber */
   --accent:         hsl(38, 92%, 55%);
@@ -270,6 +272,15 @@ ul, ol {
   background: var(--accent-2-muted);
   color: var(--accent-2);
 }
+
+/* --- Shipped badge --- */
+.badge-shipped {
+  background: var(--accent-2-muted);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+}
+
+
 
 /* Active badge pulse */
 .badge-active::before {

@@ -161,9 +161,7 @@ export default function About() {
       >
         <div className="container">
           <p className="section-label fade-up">Experience & Education</p>
-          <h2 className="fade-up" style={{ marginBottom: "var(--space-2xl)" }}>
-            Experience & learning path
-          </h2>
+          <h2 className="fade-up" style={{ marginBottom: "var(--space-2xl)" }}>Experience & Education</h2>
           <div className="fade-up">
             {/* TUK Attachment */}
             <div className="card" style={{ marginBottom: "var(--space-lg)" }}>

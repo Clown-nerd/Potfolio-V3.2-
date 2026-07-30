@@ -30,7 +30,7 @@ const stack: StackGroup[] = [
     label: "Backend",
     items: [
       { name: "Node.js", note: "Runtime for APIs and workers" },
-      { name: "Fastify", note: "KPFAS API layer — fast, schema-validated", logo: "fastapi.svg" },
+      { name: "Fastify", note: "KPFAS API layer — fast, schema-validated" },
       { name: "Express", note: "Simpler APIs and prototypes" },
       { name: "BullMQ", note: "Job queues for KPFAS batch processing" },
     ],
