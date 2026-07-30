@@ -9,7 +9,7 @@ export default function Home() {
         <div className="container">
           <p className="hero-tagline fade-up">// civic-tech systems builder</p>
           <h1 className="fade-up">
-            I&apos;m <span className="accent">Nick Nyagol</span>,<br />
+            I&apos;m <span className="accent">Nickson Nyagol</span>,<br />
             I build systems that serve people.
           </h1>
           <p className="hero-description fade-up">

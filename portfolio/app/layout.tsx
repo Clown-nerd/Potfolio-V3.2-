@@ -6,14 +6,14 @@ import ScrollAnimator from "./components/ScrollAnimator";
 
 export const metadata: Metadata = {
   title: {
-    default: "Nick Nyagol · Civic-Tech Systems Builder",
-    template: "%s · Nick Nyagol",
+    default: "Nickson Nyagol · Civic-Tech Systems Builder",
+    template: "%s · Nickson Nyagol",
   },
   description:
     "Civic-tech systems builder shipping multi-tenant platforms and public-finance tooling from Nairobi.",
   metadataBase: new URL("https://nicknyagol.dev"),
   openGraph: {
-    title: "Nick Nyagol · Civic-Tech Systems Builder",
+    title: "Nickson Nyagol · Civic-Tech Systems Builder",
     description:
       "Civic-tech systems builder shipping multi-tenant platforms and public-finance tooling from Nairobi.",
     type: "website",

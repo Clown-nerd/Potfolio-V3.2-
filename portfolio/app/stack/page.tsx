@@ -72,6 +72,15 @@ const stack: StackGroup[] = [
       { name: "Bash", note: "Automation, deployment scripts", logo: "gnubash.svg" },
     ],
   },
+  {
+    label: "Mobile",
+    items: [
+      { name: "Kotlin", note: "Partner Sync Android app" },
+      { name: "Jetpack Compose", note: "Native Android UI layer" },
+      { name: "React Native", note: "M-Pesa Tracker mobile app" },
+      { name: "Firebase", note: "Auth + Firestore for Partner Sync" },
+    ],
+  },
 ];
 
 export default function Stack() {
