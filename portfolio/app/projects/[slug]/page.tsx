@@ -59,21 +59,20 @@ export default async function ProjectDetail({
           <div className="project-detail-layout">
             {/* Main content */}
             <div className="project-content fade-up">
-              <h2>Overview</h2>
+                            <h2>Problem</h2>
               <p>{project.description}</p>
-
-              <h2>The Challenge</h2>
-              <p>{project.challenge}</p>
 
               <h2>Approach</h2>
               <p>{project.approach}</p>
 
-              <h2>Key Features</h2>
-              <ul>
-                {project.features.map((feature, i) => (
-                  <li key={i}>{feature}</li>
+              <h2>Stack</h2>
+              <div className="tags">
+                {project.stack.map((tech) => (
+                  <span key={tech} className="badge badge-tech">
+                    {tech}
+                  </span>
                 ))}
-              </ul>
+              </div>
 
               <h2>Outcome</h2>
               <p>{project.outcome}</p>
