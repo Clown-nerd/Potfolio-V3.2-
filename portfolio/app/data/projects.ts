@@ -111,9 +111,10 @@ export const projects: Project[] = [
     description:
       "A library management system handling digital cataloging, member registration, book lending/returns, and overdue tracking. Built for a public library that previously operated entirely on paper records.",
     stack: [
-      "Next.js",
-      "PostgreSQL",
+      "React",
       "Node.js",
+      "Express",
+      "MongoDB",
       "TypeScript",
     ],
     features: [
@@ -133,40 +134,40 @@ export const projects: Project[] = [
   {
     slug: "partner-sync",
     title: "Partner Sync",
-    tagline: "NGO partner data synchronization tool",
+    tagline: "Private Android app for NGO partner coordination",
     status: "shipped",
     description:
-      "A data synchronization tool that keeps partner organization records in sync across multiple NGO systems. Handles conflict resolution, deduplication, and batch updates across different data formats.",
+      "A private Android application for coordinating and syncing partner organization data across NGO workflows. Built for internal testing with real-time database sync and secure authentication.",
     stack: [
-      "Node.js",
-      "PostgreSQL",
-      "TypeScript",
-      "Redis",
+      "Kotlin",
+      "Jetpack Compose",
+      "Firebase Auth",
+      "Firestore",
+      "Android",
     ],
     features: [
-      "Bi-directional sync between partner databases",
-      "Configurable conflict resolution strategies",
-      "Deduplication engine using fuzzy matching",
-      "Batch import/export in CSV and JSON formats",
-      "Sync history and audit log",
+      "Kotlin + Jetpack Compose native Android UI",
+      "Firebase Auth for secure partner login",
+      "Firestore real-time sync for partner records",
+      "Play Console internal testing track deployment",
     ],
     challenge:
-      "NGOs working with multiple partner organizations often maintain overlapping datasets that drift out of sync. Manual reconciliation is tedious and error-prone, especially when dealing with inconsistent data formats.",
+      "Partner organizations needed a lightweight mobile-first tool for staying in sync without browser-based infrastructure. Needed to work reliably on mid-range Android devices common across the partner network.",
     approach:
-      "Built a sync engine that maps fields across different schemas, detects conflicts using timestamp and hash comparison, and applies configurable resolution strategies (latest-wins, manual review, merge). Redis caches intermediate sync state for performance.",
+      "Built a native Android app in Kotlin with Jetpack Compose for the UI layer. Firebase Auth handles secure login; Firestore provides real-time bidirectional sync with offline support. Deployed through Google Play Console on the internal testing track.",
     outcome:
-      "Reduced partner data reconciliation time from days to minutes. Currently handling sync for multiple partner organizations with different data schemas.",
+      "Private internal tool. Available on the internal testing track via Play Console. Actively used by the partner network it was built for.",
   },
   {
     slug: "mpesa-tracker",
-    title: "M-Pesa Tracker",
+    title: "M-Pesa Transaction Tracker",
     tagline: "Personal M-Pesa transaction analytics",
     status: "shipped",
     description:
       "A personal finance tool that parses M-Pesa SMS transaction messages and generates spending analytics, category breakdowns, and monthly reports. Turns raw transaction SMSes into actionable financial insights.",
     stack: [
+      "React Native",
       "Node.js",
-      "Next.js",
       "PostgreSQL",
       "TypeScript",
     ],
@@ -180,7 +181,7 @@ export const projects: Project[] = [
     challenge:
       "M-Pesa is the primary payment method for millions of Kenyans, but there's no built-in spending analytics. Transaction history is just a list of SMSes — no categorization, no trends, no insights.",
     approach:
-      "Built a regex-based parser that extracts amount, recipient, date, and type from M-Pesa SMS formats. A rules engine auto-categorizes transactions based on recipient patterns. The Next.js dashboard renders charts and allows manual category corrections that train future auto-categorization.",
+      "Built a regex-based parser that extracts amount, recipient, date, and type from M-Pesa SMS formats. A rules engine auto-categorizes transactions based on recipient patterns. The React Native dashboard renders charts and allows manual category corrections that train future auto-categorization.",
     outcome:
       "Personal tool that provides clear visibility into monthly M-Pesa spending patterns. Exported reports used for personal budgeting and expense tracking.",
   },

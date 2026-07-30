@@ -154,41 +154,19 @@ export default function About() {
         </div>
       </section>
 
-      {/* Education */}
+      {/* Experience & Education */}
       <section
         className="section"
         style={{ background: "var(--bg-secondary)" }}
       >
         <div className="container">
-          <p className="section-label fade-up">Education</p>
+          <p className="section-label fade-up">Experience & Education</p>
           <h2 className="fade-up" style={{ marginBottom: "var(--space-2xl)" }}>
-            Learning path
+            Experience & learning path
           </h2>
           <div className="fade-up">
+            {/* TUK Attachment */}
             <div className="card" style={{ marginBottom: "var(--space-lg)" }}>
-              <div className="card-header">
-                <div>
-                  <h3 className="card-title">
-                    Diploma in Computer Science — Level 6
-                  </h3>
-                  <p
-                    className="card-description"
-                    style={{ marginTop: "var(--space-xs)" }}
-                  >
-                    Kasarani Technical and Vocational College
-                  </p>
-                </div>
-                <span className="badge badge-active">In Progress</span>
-              </div>
-              <p
-                className="card-description"
-                style={{ fontFamily: "var(--font-mono)", fontSize: "0.8125rem" }}
-              >
-                Expected graduation: September 2027
-              </p>
-            </div>
-
-            <div className="card">
               <div className="card-header">
                 <div>
                   <h3 className="card-title">
@@ -208,6 +186,54 @@ export default function About() {
                 style={{ fontFamily: "var(--font-mono)", fontSize: "0.8125rem" }}
               >
                 Hands-on technical environment experience
+              </p>
+            </div>
+
+            {/* Clown Nerds Freelance */}
+            <div className="card" style={{ marginBottom: "var(--space-lg)" }}>
+              <div className="card-header">
+                <div>
+                  <h3 className="card-title">
+                    Freelance Full-Stack Developer
+                  </h3>
+                  <p
+                    className="card-description"
+                    style={{ marginTop: "var(--space-xs)" }}
+                  >
+                    Clown Nerds
+                  </p>
+                </div>
+                <span className="badge badge-active">Active</span>
+              </div>
+              <p
+                className="card-description"
+                style={{ fontFamily: "var(--font-mono)", fontSize: "0.8125rem" }}
+              >
+                Shipping multi-tenant platforms, civic-tech tools, and public-finance systems on constrained local hardware.
+              </p>
+            </div>
+
+            {/* Kasarani TVC */}
+            <div className="card">
+              <div className="card-header">
+                <div>
+                  <h3 className="card-title">
+                    Diploma in Computer Science — Level 6
+                  </h3>
+                  <p
+                    className="card-description"
+                    style={{ marginTop: "var(--space-xs)" }}
+                  >
+                    Kasarani Technical and Vocational College
+                  </p>
+                </div>
+                <span className="badge badge-active">In Progress</span>
+              </div>
+              <p
+                className="card-description"
+                style={{ fontFamily: "var(--font-mono)", fontSize: "0.8125rem" }}
+              >
+                Expected graduation: September 2027
               </p>
             </div>
           </div>
