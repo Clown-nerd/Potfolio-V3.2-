@@ -105,7 +105,7 @@ export default function Writing() {
                     fontStyle: "italic",
                   }}
                 >
-                  Coming soon — MDX pipeline in progress
+                  // article coming — MDX pipeline ships in Phase 4
                 </p>
               </article>
             ))}

@@ -108,6 +108,27 @@ export default function Contact() {
               multi-tenant SaaS. Based in Nairobi (EAT, UTC+3).
             </p>
           </div>
+          {/* Testimonial / Recommendation Note (Option A Fallback) */}
+          <div
+            className="fade-up"
+            style={{
+              marginTop: "var(--space-xl)",
+              padding: "var(--space-md)",
+              borderLeft: "3px solid var(--accent)",
+              background: "var(--bg-card)",
+              maxWidth: "480px",
+            }}
+          >
+            <p
+              style={{
+                fontSize: "0.875rem",
+                color: "var(--text-muted)",
+                lineHeight: 1.5,
+              }}
+            >
+              If we&apos;ve worked together and you&apos;d like to leave a note or recommendation, feel free to email me above.
+            </p>
+          </div>
         </div>
       </section>
     </div>
