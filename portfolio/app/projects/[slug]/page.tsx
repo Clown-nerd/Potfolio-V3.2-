@@ -59,23 +59,47 @@ export default async function ProjectDetail({
           <div className="project-detail-layout">
             {/* Main content */}
             <div className="project-content fade-up">
-                            <h2>Problem</h2>
+              <h2>Overview</h2>
               <p>{project.description}</p>
 
-              <h2>Approach</h2>
-              <p>{project.approach}</p>
+              {project.challenge && (
+                <>
+                  <h2>Challenge</h2>
+                  <p>{project.challenge}</p>
+                </>
+              )}
 
-              <h2>Stack</h2>
-              <div className="tags">
-                {project.stack.map((tech) => (
-                  <span key={tech} className="badge badge-tech">
-                    {tech}
-                  </span>
-                ))}
-              </div>
+              {project.approach && (
+                <>
+                  <h2>Approach</h2>
+                  <p>{project.approach}</p>
+                </>
+              )}
 
-              <h2>Outcome</h2>
-              <p>{project.outcome}</p>
+              {project.features && project.features.length > 0 && (
+                <>
+                  <h2>Key Features</h2>
+                  <ul>
+                    {project.features.map((feature, idx) => (
+                      <li key={idx}>{feature}</li>
+                    ))}
+                  </ul>
+                </>
+              )}
+
+              {project.stackRationale && (
+                <>
+                  <h2>Stack</h2>
+                  <p>{project.stackRationale}</p>
+                </>
+              )}
+
+              {project.outcome && (
+                <>
+                  <h2>Outcome</h2>
+                  <p>{project.outcome}</p>
+                </>
+              )}
             </div>
 
             {/* Sidebar */}
@@ -98,17 +122,17 @@ export default async function ProjectDetail({
                 </span>
               </div>
 
-              {project.links && project.links.length > 0 && (
-                <div className="sidebar-block">
-                  <p className="sidebar-label">Links</p>
-                  <div
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      gap: "var(--space-sm)",
-                    }}
-                  >
-                    {project.links.map((link) => (
+              <div className="sidebar-block">
+                <p className="sidebar-label">Links</p>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "var(--space-sm)",
+                  }}
+                >
+                  {project.links && project.links.length > 0 ? (
+                    project.links.map((link) => (
                       <a
                         key={link.url}
                         href={link.url}
@@ -119,10 +143,20 @@ export default async function ProjectDetail({
                       >
                         {link.label} ↗
                       </a>
-                    ))}
-                  </div>
+                    ))
+                  ) : (
+                    <a
+                      href="https://github.com/Clown-nerd"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-ghost"
+                      style={{ justifyContent: "center" }}
+                    >
+                      GitHub ↗
+                    </a>
+                  )}
                 </div>
-              )}
+              </div>
             </aside>
           </div>
         </div>

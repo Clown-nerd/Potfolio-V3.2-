@@ -9,6 +9,7 @@ export interface Project {
   challenge: string;
   approach: string;
   outcome: string;
+  stackRationale?: string;
   links?: { label: string; url: string }[];
 }
 
@@ -42,6 +43,8 @@ export const projects: Project[] = [
       "Implemented shared-schema multi-tenancy using PostgreSQL Row-Level Security (RLS) policies. Every table has a tenant_id column, and RLS policies enforce that queries only return rows belonging to the authenticated tenant. Drizzle ORM handles the schema migrations, and the auth layer injects tenant context into every database session.",
     outcome:
       "12 active tenants running on a single Neon free-tier instance. Zero cross-tenant data incidents. Sub-100ms query times despite shared resources.",
+    stackRationale:
+      "The platform leverages Next.js and TypeScript for a robust frontend, with PostgreSQL on Neon and Drizzle ORM to manage shared-schema multi-tenancy using Row-Level Security, all deployed on Vercel.",
     links: [
       { label: "GitHub", url: "https://github.com/Clown-nerd" },
     ],
@@ -73,6 +76,8 @@ export const projects: Project[] = [
       "Built scrapers to normalize tender data from multiple government portals into a unified PostgreSQL database. Added full-text search with pg_trgm for fuzzy matching, and a Next.js frontend with filters for entity, category, and deadline. Email notification workers handle alert subscriptions.",
     outcome:
       "Thousands of tenders indexed and searchable. Used by civic organizations and journalists tracking procurement patterns in county governments.",
+    stackRationale:
+      "Built using Next.js, Node.js, and TypeScript, with PostgreSQL providing the data storage and full-text search capabilities, and Vercel for deployment.",
   },
   {
     slug: "kpfas",
@@ -102,6 +107,8 @@ export const projects: Project[] = [
       "Designed a Fastify API layer that accepts financial data inputs and enqueues processing jobs through BullMQ. Workers handle reconciliation, validation, and report generation asynchronously. Redis manages queue state, and dead-letter queues capture failures for manual review. PostgreSQL stores all processed results with full audit trails.",
     outcome:
       "Currently in development. Architecture designed to handle batch processing of financial data at scale, with built-in retry logic and audit compliance.",
+    stackRationale:
+      "A queue-driven architecture utilizing Node.js, Fastify, BullMQ, and Redis for asynchronous processing, backed by PostgreSQL and typed with TypeScript.",
   },
   {
     slug: "akosombo",
@@ -130,6 +137,8 @@ export const projects: Project[] = [
       "Built a straightforward CRUD system with a focus on speed and simplicity. The catalog supports search by title, author, ISBN, and category. The lending module tracks checkout/return dates and auto-calculates fines. Kept the UI simple enough for library staff who aren't tech-savvy.",
     outcome:
       "Fully digitized library operations. Staff report significant time savings on daily lending operations and near-zero lost-book incidents since adoption.",
+    stackRationale:
+      "Developed with React for the frontend and a Node.js/Express backend, using MongoDB for digital cataloging and TypeScript for type safety.",
   },
   {
     slug: "partner-sync",
@@ -157,6 +166,8 @@ export const projects: Project[] = [
       "Built a native Android app in Kotlin with Jetpack Compose for the UI layer. Firebase Auth handles secure login; Firestore provides real-time bidirectional sync with offline support. Deployed through Google Play Console on the internal testing track.",
     outcome:
       "Private internal tool. Available on the internal testing track via Play Console. Actively used by the partner network it was built for.",
+    stackRationale:
+      "A native Android application built with Kotlin and Jetpack Compose, utilizing Firebase Auth and Firestore for real-time synchronization.",
   },
   {
     slug: "mpesa-tracker",
@@ -184,6 +195,8 @@ export const projects: Project[] = [
       "Built a regex-based parser that extracts amount, recipient, date, and type from M-Pesa SMS formats. A rules engine auto-categorizes transactions based on recipient patterns. The React Native dashboard renders charts and allows manual category corrections that train future auto-categorization.",
     outcome:
       "Personal tool that provides clear visibility into monthly M-Pesa spending patterns. Exported reports used for personal budgeting and expense tracking.",
+    stackRationale:
+      "A mobile solution built with React Native and Node.js, using PostgreSQL for transaction analytics and TypeScript for reliable typing.",
   },
 ];
 
