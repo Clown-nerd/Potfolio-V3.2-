@@ -11,6 +11,7 @@ export interface Project {
   outcome: string;
   stackRationale?: string;
   links?: { label: string; url: string }[];
+  image?: string;
 }
 
 export const projects: Project[] = [
@@ -82,6 +83,7 @@ export const projects: Project[] = [
       { label: "Live Site", url: "https://kenya-tender-management-system.vercel.app/" },
       { label: "GitHub", url: "https://github.com/Clown-nerd" },
     ],
+    image: "/projects/tender-eye.png",
   },
   {
     slug: "kpfas",

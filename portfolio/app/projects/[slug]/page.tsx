@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { projects, getProjectBySlug } from "../../data/projects";
+import RevealImage from "../../components/RevealImage";
 import type { Metadata } from "next";
 
 export function generateStaticParams() {
@@ -59,6 +60,16 @@ export default async function ProjectDetail({
           <div className="project-detail-layout">
             {/* Main content */}
             <div className="project-content fade-up">
+              {project.image && (
+                <div style={{ marginBottom: "var(--space-2xl)" }}>
+                  <RevealImage
+                    src={project.image}
+                    alt={`${project.title} screenshot`}
+                    width={1440}
+                    height={900}
+                  />
+                </div>
+              )}
               <h2>Overview</h2>
               <p>{project.description}</p>
 

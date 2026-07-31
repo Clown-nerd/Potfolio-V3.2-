@@ -861,3 +861,53 @@ ul, ol {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--text-tertiary);
 }
+
+/* --- Reveal Image (Scroll-driven) --- */
+.reveal-image-wrapper {
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: var(--bg-tertiary); /* subtle placeholder color while building */
+}
+
+.reveal-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@supports (animation-timeline: view()) {
+  /* Override the IntersectionObserver fade-up behavior if view() is supported */
+  .reveal-image-wrapper.fade-up {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .reveal-image {
+    animation: image-build linear both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 40%;
+  }
+}
+
+@keyframes image-build {
+  0% {
+    clip-path: inset(10% 5% 10% 5% round var(--radius-md));
+    opacity: 0.2;
+    transform: scale(0.95);
+  }
+  100% {
+    clip-path: inset(0% 0% 0% 0% round var(--radius-md));
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-image,
+  .reveal-image-wrapper.fade-up {
+    animation: none !important;
+    clip-path: none !important;
+    transform: none !important;
+  }
+}
