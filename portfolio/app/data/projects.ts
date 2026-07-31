@@ -198,6 +198,32 @@ export const projects: Project[] = [
     stackRationale:
       "A mobile solution built with React Native and Node.js, using PostgreSQL for transaction analytics and TypeScript for reliable typing.",
   },
+  {
+    slug: "bnb-quantum-kenya",
+    title: "BnB Quantum-Kenya",
+    tagline: "Kenya's first semiconductor fab concept",
+    status: "concept",
+    description:
+      "A personal strategic thesis for Kenya's first semiconductor fab, anchored on Konza Technopolis and Olkaria geothermal power. Treat as a 'north star' project, exploring the feasibility of high-tech manufacturing in East Africa.",
+    stack: [
+      "Strategic Planning",
+      "Hardware Architecture",
+      "Energy Infrastructure",
+      "Policy",
+    ],
+    features: [
+      "Site evaluation based on Konza Technopolis infrastructure",
+      "Power consumption models leveraging Olkaria geothermal energy",
+      "Supply chain logistics for semiconductor manufacturing in Kenya",
+      "Economic impact and skills development framework",
+    ],
+    challenge:
+      "Africa currently lacks semiconductor manufacturing capabilities, relying entirely on global supply chains. Establishing a fab requires massive capital, stable energy, and highly specialized talent.",
+    approach:
+      "Developing a comprehensive strategic thesis that maps out the requirements for a viable fab. The research focuses on utilizing Kenya's abundant geothermal energy (Olkaria) to solve the power constraint and positioning Konza Technopolis as the ideal location.",
+    outcome:
+      "An ongoing 'north star' research project. Not a shipped product, but a long-term vision guiding my interest in hardware and systems architecture.",
+  },
 ];
 
 export function getProjectBySlug(slug: string): Project | undefined {

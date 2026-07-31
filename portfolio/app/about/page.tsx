@@ -30,36 +30,6 @@ export default function About() {
         </div>
       </section>
 
-      <hr className="divider container" />
-
-      {/* Origin */}
-      <section className="section" style={{ paddingTop: 0 }}>
-        <div className="container">
-          <p className="section-label fade-up">Origin Story</p>
-          <div className="project-content fade-up">
-            <p>
-              I started coding because I saw systems around me that didn&apos;t
-              work — procurement portals that nobody could search, library
-              records kept in paper notebooks, financial reports compiled
-              manually every month. I didn&apos;t have a CS background or a
-              powerful machine. What I had was a laptop with 8 GB of RAM, a
-              128 GB SSD, and a stubborn refusal to accept that &quot;that&apos;s
-              just how it is.&quot;
-            </p>
-            <p>
-              My freelance brand is{" "}
-              <strong style={{ color: "var(--accent)" }}>Clown Nerds</strong> —
-              because the best builders don&apos;t take themselves too seriously,
-              but they take the work very seriously. Under that banner, I ship
-              real tools for real problems: multi-tenant platforms running on
-              free-tier databases, procurement trackers that make government
-              spending searchable, USSD-based civic infrastructure concepts
-              that could reach anyone with a phone.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Antigravity workflow */}
       <section
         className="section"
@@ -68,91 +38,12 @@ export default function About() {
         <div className="container">
           <p className="section-label fade-up">Workflow</p>
           <h2 className="fade-up" style={{ marginBottom: "var(--space-lg)" }}>
-            The &quot;Antigravity&quot; Method
+            AI-Accelerated Workflow
           </h2>
           <div className="project-content fade-up">
             <p>
-              I route tasks across a multi-model AI stack. It&apos;s not a product —
-              it&apos;s how I work. Different models have different strengths, and
-              I use that to ship faster than my hardware should allow:
+              I use AI tooling deliberately to move faster — the workflow is optimized for speed and output, allowing me to punch above my weight class on constrained hardware. The models write drafts, but I remain the human in the loop, making all architectural and implementation decisions.
             </p>
-            <ul>
-              <li>
-                <strong>Gemini</strong> — strategic planning, architecture
-                decisions, long-context analysis
-              </li>
-              <li>
-                <strong>Claude</strong> — code generation, debugging,
-                refactoring, documentation
-              </li>
-              <li>
-                <strong>GPT</strong> — copywriting, user-facing content,
-                brainstorming
-              </li>
-              <li>
-                <strong>Cursor</strong> — IDE-integrated AI for real-time
-                code completion and pair programming
-              </li>
-            </ul>
-            <p>
-              The key insight: no single model is best at everything. By routing
-              tasks to the right model, I get senior-engineer-level output from
-              a student-level budget. The workflow itself is a competitive
-              advantage.
-            </p>
-            <p>
-              The models write drafts. I make the decisions.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Constraints */}
-      <section className="section">
-        <div className="container">
-          <p className="section-label fade-up">Constraints</p>
-          <h2 className="fade-up" style={{ marginBottom: "var(--space-2xl)" }}>
-            What I build with
-          </h2>
-          <div className="grid-3 stagger">
-            <div className="card fade-up">
-              <p
-                className="card-title"
-                style={{ fontFamily: "var(--font-mono)", color: "var(--accent)" }}
-              >
-                8 GB RAM
-              </p>
-              <p className="card-description" style={{ marginTop: "var(--space-sm)" }}>
-                Every dependency, every Docker container, every dev server
-                competes for the same 8 gigs. This forces lean architecture
-                decisions.
-              </p>
-            </div>
-            <div className="card fade-up">
-              <p
-                className="card-title"
-                style={{ fontFamily: "var(--font-mono)", color: "var(--accent)" }}
-              >
-                128 GB SSD
-              </p>
-              <p className="card-description" style={{ marginTop: "var(--space-sm)" }}>
-                No room for bloated node_modules or idle projects. Everything
-                on this machine earns its space.
-              </p>
-            </div>
-            <div className="card fade-up">
-              <p
-                className="card-title"
-                style={{ fontFamily: "var(--font-mono)", color: "var(--accent)" }}
-              >
-                Azure VM
-              </p>
-              <p className="card-description" style={{ marginTop: "var(--space-sm)" }}>
-                For heavy builds, CI runs, and anything that would melt the
-                laptop. Cloud compute as an extension of a constrained local
-                setup.
-              </p>
-            </div>
           </div>
         </div>
       </section>

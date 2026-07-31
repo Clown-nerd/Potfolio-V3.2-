@@ -133,12 +133,10 @@ export default function Home() {
             </div>
             <div className="card fade-up">
               <h4 style={{ marginBottom: "var(--space-sm)", color: "var(--accent)" }}>
-                🤖 Multi-Model AI Workflow
+                🤖 AI-Accelerated Workflow
               </h4>
               <p className="card-description">
-                I route tasks across a multi-model stack — Gemini for planning,
-                Claude for code, GPT for copy. I call it &quot;Antigravity.&quot;
-                The workflow itself is a tool.
+                I use AI tooling deliberately to move faster — optimizing the workflow for speed and output. The models write drafts; I make the decisions.
               </p>
             </div>
             <div className="card fade-up">
