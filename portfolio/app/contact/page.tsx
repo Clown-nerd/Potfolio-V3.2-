@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with Nick Nyagol Ochieng — open to freelance projects, collaborations, and civic-tech conversations.",
+    "Get in touch with Nickson Nyagol Ochieng — open to freelance projects, collaborations, and civic-tech conversations.",
 };
 
 export default function Contact() {

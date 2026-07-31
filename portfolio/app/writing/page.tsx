@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Writing",
   description:
-    "Build logs, case studies, and technical writing by Nick Nyagol Ochieng.",
+    "Build logs, case studies, and technical writing by Nickson Nyagol Ochieng.",
 };
 
 interface Article {
@@ -29,7 +29,7 @@ const articles: Article[] = [
     date: "2026-06",
     category: "Workflow",
     excerpt:
-      "How I use Gemini, Claude, GPT, and Cursor together — not as a gimmick, but as a legitimate productivity multiplier for a solo developer on constrained hardware.",
+      "A breakdown of task routing across specialized AI tooling — turning AI assistance into a structured, human-in-the-loop engineering workflow.",
   },
   {
     slug: "civic-tech-nairobi",
@@ -61,6 +61,49 @@ export default function Writing() {
 
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
+          <div
+            className="fade-up"
+            style={{
+              marginBottom: "var(--space-2xl)",
+              padding: "var(--space-lg)",
+              background: "var(--bg-secondary)",
+              border: "1px solid var(--border-subtle)",
+              borderRadius: "var(--radius-md)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: "var(--space-md)",
+              flexWrap: "wrap",
+            }}
+          >
+            <div>
+              <p
+                style={{
+                  fontFamily: "var(--font-mono)",
+                  fontSize: "0.75rem",
+                  color: "var(--accent)",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.05em",
+                  marginBottom: "var(--space-xs)",
+                }}
+              >
+                // Live Technical Blog
+              </p>
+              <p style={{ color: "var(--text-primary)", fontWeight: 500, margin: 0 }}>
+                Bash n Build — live build logs, architecture breakdown &amp; tech essays
+              </p>
+            </div>
+            <a
+              href="https://tech-blog-ten-silk.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-ghost"
+              style={{ fontSize: "0.8125rem", whiteSpace: "nowrap" }}
+            >
+              Read full posts on Bash n Build &rarr;
+            </a>
+          </div>
+
           <div className="stagger" style={{ display: "flex", flexDirection: "column", gap: "var(--space-lg)" }}>
             {articles.map((article) => (
               <article

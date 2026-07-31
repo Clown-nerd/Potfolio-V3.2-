@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Stack",
   description:
-    "The tools and technologies Nick Nyagol Ochieng uses to build civic-tech systems and multi-tenant platforms.",
+    "The tools and technologies Nickson Nyagol Ochieng uses to build civic-tech systems and multi-tenant platforms.",
 };
 
 interface StackItem {

@@ -22,7 +22,7 @@ export default function Nav() {
       <div className="nav-inner">
         <Link href="/" className="nav-brand" aria-label="Home">
           <span className="nav-brand-dot" aria-hidden="true" />
-          nick nyagol
+          nickson nyagol
         </Link>
 
         <button

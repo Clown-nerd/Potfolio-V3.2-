@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Nick Nyagol Ochieng — CS student, civic-tech builder, and full-stack developer based in Nairobi, Kenya.",
+    "Nickson Nyagol Ochieng — CS student, civic-tech builder, and full-stack developer based in Nairobi, Kenya.",
 };
 
 export default function About() {
@@ -21,7 +21,7 @@ export default function About() {
             className="hero-description fade-up"
             style={{ marginTop: "var(--space-lg)" }}
           >
-            I&apos;m Nick Nyagol Ochieng — a full-stack developer and CS diploma
+            I&apos;m Nickson Nyagol Ochieng — a full-stack developer and CS diploma
             student at Kasarani Technical and Vocational College. I build
             multi-tenant platforms, civic-tech tools, and public-finance
             systems. Currently on industrial attachment as a lab technician at
@@ -42,7 +42,7 @@ export default function About() {
           </h2>
           <div className="project-content fade-up">
             <p>
-              I use AI tooling deliberately to move faster — the workflow is optimized for speed and output, allowing me to punch above my weight class on constrained hardware. The models write drafts, but I remain the human in the loop, making all architectural and implementation decisions.
+              I use AI tooling deliberately to move faster — the models draft, I make the decisions.
             </p>
           </div>
         </div>
@@ -101,7 +101,7 @@ export default function About() {
                 className="card-description"
                 style={{ fontFamily: "var(--font-mono)", fontSize: "0.8125rem" }}
               >
-                Shipping multi-tenant platforms, civic-tech tools, and public-finance systems on constrained local hardware.
+                Shipping multi-tenant platforms, civic-tech tools, and public-finance systems.
               </p>
             </div>
 

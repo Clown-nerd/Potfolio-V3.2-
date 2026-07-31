@@ -5,7 +5,7 @@ import { projects } from "../data/projects";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Multi-tenant platforms, civic-tech tools, and public-finance systems built by Nick Nyagol Ochieng.",
+    "Multi-tenant platforms, civic-tech tools, and public-finance systems built by Nickson Nyagol Ochieng.",
 };
 
 export default function Projects() {

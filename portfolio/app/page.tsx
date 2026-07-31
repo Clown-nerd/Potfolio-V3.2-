@@ -15,7 +15,7 @@ export default function Home() {
           <p className="hero-description fade-up">
             Full-stack developer shipping multi-tenant platforms, public-finance
             tooling, and civic infrastructure from Nairobi. I turn constraints
-            into architecture — 8 GB RAM, free-tier databases, and a relentless
+            into architecture — free-tier databases, efficient schemas, and a relentless
             bias toward shipping.
           </p>
           <div className="hero-actions fade-up">
@@ -126,9 +126,9 @@ export default function Home() {
                 🛠 Constraint-Driven
               </h4>
               <p className="card-description">
-                8 GB RAM. 128 GB SSD. Azure VM for heavy lifts. These aren&apos;t
+                Database quotas, API limits, and deployment bounds aren&apos;t
                 limitations — they&apos;re architectural inputs. Every design decision
-                accounts for what&apos;s actually available.
+                accounts for operational realities.
               </p>
             </div>
             <div className="card fade-up">

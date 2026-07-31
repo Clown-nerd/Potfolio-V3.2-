@@ -36,7 +36,7 @@ export default function Footer() {
 
       <div className="container footer-inner">
         <p className="footer-text">
-          © {year} Nick Nyagol Ochieng · Built from Nairobi
+          © {year} Nickson Nyagol Ochieng · Built from Nairobi
         </p>
         <div className="footer-links">
           <Link
