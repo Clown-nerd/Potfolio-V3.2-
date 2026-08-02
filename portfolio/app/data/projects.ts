@@ -194,33 +194,38 @@ export const projects: Project[] = [
       "Developed with React for the frontend and a Node.js/Express backend, using MongoDB for digital cataloging and TypeScript for type safety.",
   },
   {
-    slug: "partner-sync",
-    title: "Partner Sync",
-    tagline: "Private Android app for NGO partner coordination",
+    slug: "bash-n-build",
+    title: "Bash n Build",
+    tagline: "Technical publishing platform and blog",
     status: "shipped",
     description:
-      "A private Android application for coordinating and syncing partner organization data across NGO workflows. Built for internal testing with real-time database sync and secure authentication.",
+      "A bespoke technical publishing platform designed to share engineering insights, build logs, and architectural decisions. Features a custom design system with rich typography and a distinct color palette.",
     stack: [
-      "Kotlin",
-      "Jetpack Compose",
-      "Firebase Auth",
-      "Firestore",
-      "Android",
+      "Next.js",
+      "TypeScript",
+      "Vercel",
     ],
     features: [
-      "Kotlin + Jetpack Compose native Android UI",
-      "Firebase Auth for secure partner login",
-      "Firestore real-time sync for partner records",
-      "Play Console internal testing track deployment",
+      "Custom design system with Fraunces, IBM Plex Sans, and IBM Plex Mono",
+      "Distinctive Savannah Canopy green, Terracotta, and Golden Sun palette",
+      "Optimized MDX rendering for technical content and code snippets",
     ],
     challenge:
-      "Partner organizations needed a lightweight mobile-first tool for staying in sync without browser-based infrastructure. Needed to work reliably on mid-range Android devices common across the partner network.",
+      "Generic blog templates lack the typographic control and specific aesthetic required for a technical brand. I needed a publishing platform that feels crafted, performs exceptionally well, and provides a distinct reading experience.",
     approach:
-      "Built a native Android app in Kotlin with Jetpack Compose for the UI layer. Firebase Auth handles secure login; Firestore provides real-time bidirectional sync with offline support. Deployed through Google Play Console on the internal testing track.",
+      "Built a custom Next.js 14 application from the ground up, focusing heavily on design systems and typography. The architecture prioritizes static generation for speed, while the bespoke UI leverages a carefully curated color palette and font stack to establish a strong technical identity.",
     outcome:
-      "Private internal tool. Available on the internal testing track via Play Console. Actively used by the partner network it was built for.",
+      "A live, high-performance publishing platform that accurately reflects the brand's technical depth and design sensibilities. It serves as the primary outlet for build logs and architectural deep-dives.",
     stackRationale:
-      "A native Android application built with Kotlin and Jetpack Compose, utilizing Firebase Auth and Firestore for real-time synchronization.",
+      "Next.js 14 provides the ideal foundation for a static-first publishing platform, with TypeScript ensuring maintainability and Vercel handling edge deployment.",
+    links: [
+      { label: "Live Site", url: "https://tech-blog-ten-silk.vercel.app/" },
+    ],
+    showcaseImages: [
+      "/projects/bash-n-build-1.png",
+      "/projects/bash-n-build-2.png",
+      "/projects/bash-n-build-3.png",
+    ],
   },
   {
     slug: "mpesa-tracker",
@@ -250,32 +255,6 @@ export const projects: Project[] = [
       "Personal tool that provides clear visibility into monthly M-Pesa spending patterns. Exported reports used for personal budgeting and expense tracking.",
     stackRationale:
       "A mobile solution built with React Native and Node.js, using PostgreSQL for transaction analytics and TypeScript for reliable typing.",
-  },
-  {
-    slug: "bnb-quantum-kenya",
-    title: "BnB Quantum-Kenya",
-    tagline: "Kenya's first semiconductor fab concept",
-    status: "concept",
-    description:
-      "A personal strategic thesis for Kenya's first semiconductor fab, anchored on Konza Technopolis and Olkaria geothermal power. Treat as a 'north star' project, exploring the feasibility of high-tech manufacturing in East Africa.",
-    stack: [
-      "Strategic Planning",
-      "Hardware Architecture",
-      "Energy Infrastructure",
-      "Policy",
-    ],
-    features: [
-      "Site evaluation based on Konza Technopolis infrastructure",
-      "Power consumption models leveraging Olkaria geothermal energy",
-      "Supply chain logistics for semiconductor manufacturing in Kenya",
-      "Economic impact and skills development framework",
-    ],
-    challenge:
-      "Africa currently lacks semiconductor manufacturing capabilities, relying entirely on global supply chains. Establishing a fab requires massive capital, stable energy, and highly specialized talent.",
-    approach:
-      "Developing a comprehensive strategic thesis that maps out the requirements for a viable fab. The research focuses on utilizing Kenya's abundant geothermal energy (Olkaria) to solve the power constraint and positioning Konza Technopolis as the ideal location.",
-    outcome:
-      "An ongoing 'north star' research project. Not a shipped product, but a long-term vision guiding my interest in hardware and systems architecture.",
   },
 ];
 
