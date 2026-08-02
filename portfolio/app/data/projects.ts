@@ -12,6 +12,7 @@ export interface Project {
   stackRationale?: string;
   links?: { label: string; url: string }[];
   image?: string;
+  showcaseImages?: string[];
 }
 
 export const projects: Project[] = [
@@ -84,6 +85,11 @@ export const projects: Project[] = [
       { label: "GitHub", url: "https://github.com/Clown-nerd" },
     ],
     image: "/projects/tender-eye-1.png",
+    showcaseImages: [
+      "/projects/tender-eye-1.png",
+      "/projects/tender-eye-2.png",
+      "/projects/tender-eye-3.png",
+    ],
   },
   {
     slug: "cybershield",
@@ -120,6 +126,11 @@ export const projects: Project[] = [
       { label: "GitHub", url: "https://github.com/Clown-nerd" },
     ],
     image: "/projects/cybershield-1.png",
+    showcaseImages: [
+      "/projects/cybershield-1.png",
+      "/projects/cybershield-2.png",
+      "/projects/cybershield-3.png",
+    ],
   },
   {
     slug: "kpfas",

@@ -108,11 +108,11 @@ export default function PinnedShowcase({
         tl.to(
           layer,
           {
-            translateZ: offset.z,
+            z: offset.z,
             xPercent: parseFloat(offset.x),
             yPercent: parseFloat(offset.y),
-            rotateY: offset.rotateY,
-            rotateX: offset.rotateX,
+            rotationY: offset.rotateY,
+            rotationX: offset.rotateX,
             opacity: 1 - i * 0.12,
             duration: 0.30,
             ease: "power2.inOut",
@@ -127,8 +127,8 @@ export default function PinnedShowcase({
         tl.to(
           layer,
           {
-            translateZ: offset.z + (i % 2 === 0 ? 15 : -15),
-            rotateY: offset.rotateY + (i % 2 === 0 ? 2 : -2),
+            z: offset.z + (i % 2 === 0 ? 15 : -15),
+            rotationY: offset.rotateY + (i % 2 === 0 ? 2 : -2),
             duration: 0.40,
             ease: "none",
           },
@@ -141,11 +141,11 @@ export default function PinnedShowcase({
         tl.to(
           layer,
           {
-            translateZ: 0,
+            z: 0,
             xPercent: 0,
             yPercent: 0,
-            rotateY: 0,
-            rotateX: 0,
+            rotationY: 0,
+            rotationX: 0,
             opacity: 1,
             duration: 0.30,
             ease: "power2.inOut",

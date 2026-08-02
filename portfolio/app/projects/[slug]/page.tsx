@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { projects, getProjectBySlug } from "../../data/projects";
 import RevealImage from "../../components/RevealImage";
+import PinnedShowcase from "../../components/PinnedShowcase";
+import type { ShowcaseStage } from "../../components/PinnedShowcase";
 import type { Metadata } from "next";
 
 export function generateStaticParams() {
@@ -31,6 +33,15 @@ export default async function ProjectDetail({
   const project = getProjectBySlug(slug);
   if (!project) notFound();
 
+  const hasShowcase = Boolean(project.showcaseImages && project.showcaseImages.length > 0);
+  
+  const stages: ShowcaseStage[] = [];
+  if (project.description) stages.push({ label: "Overview", detail: project.description });
+  if (project.challenge) stages.push({ label: "Challenge", detail: project.challenge });
+  if (project.approach) stages.push({ label: "Approach", detail: project.approach });
+  if (project.stackRationale) stages.push({ label: "Tech Stack", detail: project.stackRationale });
+  if (project.outcome) stages.push({ label: "Outcome", detail: project.outcome });
+
   return (
     <div className="page-content">
       <section className="project-header">
@@ -55,12 +66,16 @@ export default async function ProjectDetail({
         </div>
       </section>
 
-      <section className="section" style={{ paddingTop: 0 }}>
+      {hasShowcase && (
+        <PinnedShowcase images={project.showcaseImages!} stages={stages} />
+      )}
+
+      <section className="section" style={{ paddingTop: hasShowcase ? "var(--space-3xl)" : 0 }}>
         <div className="container">
           <div className="project-detail-layout">
             {/* Main content */}
             <div className="project-content fade-up">
-              {project.image && (
+              {!hasShowcase && project.image && (
                 <div style={{ marginBottom: "var(--space-2xl)" }}>
                   <RevealImage
                     src={project.image}
@@ -70,26 +85,31 @@ export default async function ProjectDetail({
                   />
                 </div>
               )}
-              <h2>Overview</h2>
-              <p>{project.description}</p>
-
-              {project.challenge && (
+              
+              {!hasShowcase && (
                 <>
-                  <h2>Challenge</h2>
-                  <p>{project.challenge}</p>
-                </>
-              )}
+                  <h2>Overview</h2>
+                  <p>{project.description}</p>
 
-              {project.approach && (
-                <>
-                  <h2>Approach</h2>
-                  <p>{project.approach}</p>
+                  {project.challenge && (
+                    <>
+                      <h2>Challenge</h2>
+                      <p>{project.challenge}</p>
+                    </>
+                  )}
+
+                  {project.approach && (
+                    <>
+                      <h2>Approach</h2>
+                      <p>{project.approach}</p>
+                    </>
+                  )}
                 </>
               )}
 
               {project.features && project.features.length > 0 && (
                 <>
-                  <h2>Key Features</h2>
+                  <h2 style={{ marginTop: hasShowcase ? 0 : undefined }}>Key Features</h2>
                   <ul>
                     {project.features.map((feature, idx) => (
                       <li key={idx}>{feature}</li>
@@ -98,14 +118,14 @@ export default async function ProjectDetail({
                 </>
               )}
 
-              {project.stackRationale && (
+              {!hasShowcase && project.stackRationale && (
                 <>
                   <h2>Stack</h2>
                   <p>{project.stackRationale}</p>
                 </>
               )}
 
-              {project.outcome && (
+              {!hasShowcase && project.outcome && (
                 <>
                   <h2>Outcome</h2>
                   <p>{project.outcome}</p>

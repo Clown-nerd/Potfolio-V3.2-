@@ -24,7 +24,7 @@ export default function Projects() {
           </p>
 
           <div
-            className="grid-2 stagger"
+            className="grid-2"
             style={{ marginTop: "var(--space-3xl)" }}
           >
             {projects.map((project) => (

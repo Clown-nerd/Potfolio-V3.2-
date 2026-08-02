@@ -64,7 +64,7 @@ export default function Home() {
             What I&apos;m shipping
           </h2>
 
-          <div className="grid-3 stagger">
+          <div className="grid-3">
             {featuredProjects.map((project) => (
               <Link
                 key={project.slug}
@@ -120,7 +120,7 @@ export default function Home() {
             Resourcefulness as a feature
           </h2>
 
-          <div className="grid-3 stagger">
+          <div className="grid-3">
             <div className="card fade-up">
               <h4 style={{ marginBottom: "var(--space-sm)", color: "var(--accent)" }}>
                 🛠 Constraint-Driven

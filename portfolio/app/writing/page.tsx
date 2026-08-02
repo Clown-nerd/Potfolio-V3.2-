@@ -104,7 +104,7 @@ export default function Writing() {
             </a>
           </div>
 
-          <div className="stagger" style={{ display: "flex", flexDirection: "column", gap: "var(--space-lg)" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-lg)" }}>
             {articles.map((article) => (
               <article
                 key={article.slug}
