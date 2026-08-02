@@ -519,27 +519,15 @@ ul, ol {
   color: var(--text-secondary);
 }
 
-/* --- Scroll animations --- */
+/* --- Scroll animations (GSAP-driven) --- */
+/* Initial state for ScrollTrigger.batch() — GSAP animates to final values.
+   No .visible class or .stagger nth-child rules needed; the useStaggerReveal
+   hook handles stagger timing and the reveal animation entirely in JS. */
 .fade-up {
   opacity: 0;
-  transform: translateY(16px);
-  transition:
-    opacity var(--duration-slow) var(--ease-out),
-    transform var(--duration-slow) var(--ease-out);
+  transform: translateY(24px) scale(0.97);
+  will-change: transform, opacity;
 }
-
-.fade-up.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Stagger children */
-.stagger > .fade-up:nth-child(1) { transition-delay: 0ms; }
-.stagger > .fade-up:nth-child(2) { transition-delay: 80ms; }
-.stagger > .fade-up:nth-child(3) { transition-delay: 160ms; }
-.stagger > .fade-up:nth-child(4) { transition-delay: 240ms; }
-.stagger > .fade-up:nth-child(5) { transition-delay: 320ms; }
-.stagger > .fade-up:nth-child(6) { transition-delay: 400ms; }
 
 /* --- Hero-specific --- */
 .hero {
