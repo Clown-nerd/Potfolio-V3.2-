@@ -83,7 +83,43 @@ export const projects: Project[] = [
       { label: "Live Site", url: "https://kenya-tender-management-system.vercel.app/" },
       { label: "GitHub", url: "https://github.com/Clown-nerd" },
     ],
-    image: "/projects/tender-eye.png",
+    image: "/projects/tender-eye-1.png",
+  },
+  {
+    slug: "cybershield",
+    title: "CyberShield",
+    tagline: "Cybersecurity consulting service platform",
+    status: "shipped",
+    description:
+      "A professional cybersecurity consulting platform offering security assessments, penetration testing, and compliance services. Features a polished dark-themed UI with service showcases, client testimonials, case studies, a technical blog, and an integrated consultation booking flow.",
+    stack: [
+      "React",
+      "CSS",
+      "PostHog",
+      "Vercel",
+      "JavaScript",
+    ],
+    features: [
+      "Service showcase with detailed risk assessment, penetration testing, and compliance pages",
+      "Client testimonial carousel and case study highlights",
+      "Integrated consultation booking form with service selection",
+      "Technical blog section covering cybersecurity topics",
+      "Responsive dark-themed design with glassmorphism accents",
+      "PostHog analytics integration for user behavior tracking",
+    ],
+    challenge:
+      "Cybersecurity firms in East Africa often lack a professional online presence that communicates trust and technical credibility. The site needed to feel premium and authoritative while also converting visitors into consultation leads.",
+    approach:
+      "Designed a dark-themed interface that signals security and sophistication. Built with React for component reusability across service pages, testimonials, and the blog. The consultation booking form collects service interest upfront to streamline the sales pipeline. PostHog tracks conversion funnels from landing to booking.",
+    outcome:
+      "Live and deployed on Vercel. The site serves as the primary lead-generation channel, with the booking flow converting visitors to consultation requests. Clean component architecture makes adding new services and case studies straightforward.",
+    stackRationale:
+      "Built with React and vanilla CSS for a lightweight, fast-loading experience. PostHog provides product analytics, and Vercel handles deployment with edge performance.",
+    links: [
+      { label: "Live Site", url: "https://consulting-service-wine.vercel.app/" },
+      { label: "GitHub", url: "https://github.com/Clown-nerd" },
+    ],
+    image: "/projects/cybershield-1.png",
   },
   {
     slug: "kpfas",
@@ -236,7 +272,7 @@ export function getProjectBySlug(slug: string): Project | undefined {
   return projects.find((p) => p.slug === slug);
 }
 
-export const featuredSlugs = ["mis", "tender-eye", "kpfas"];
+export const featuredSlugs = ["mis", "tender-eye", "cybershield"];
 
 export const featuredProjects = projects.filter((p) =>
   featuredSlugs.includes(p.slug)
