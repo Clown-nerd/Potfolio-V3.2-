@@ -71,7 +71,7 @@ export default function About() {
                     Technical University of Kenya
                   </p>
                 </div>
-                <span className="badge badge-active">Current</span>
+                <span className="badge badge-active">Completed</span>
               </div>
               <p
                 className="card-description"
