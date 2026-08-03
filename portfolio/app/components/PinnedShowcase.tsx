@@ -28,19 +28,7 @@ export interface PinnedShowcaseProps {
   className?: string;
 }
 
-// ---------------------------------------------------------------------------
-// Depth-offset presets per image layer (max 3 images)
-// These define the "exploded view" peak state at ~progress 0.35.
-// ---------------------------------------------------------------------------
 
-const LAYER_OFFSETS = [
-  // Front layer — stays close, slight forward push
-  { z: 60, x: "-6%", y: "-4%", rotateY: -4, rotateX: 2 },
-  // Middle layer — medium depth
-  { z: -120, x: "4%", y: "3%", rotateY: 6, rotateX: -3 },
-  // Back layer — deepest
-  { z: -280, x: "-2%", y: "6%", rotateY: -8, rotateX: 4 },
-];
 
 // ---------------------------------------------------------------------------
 // Component
@@ -102,88 +90,29 @@ export default function PinnedShowcase({
       const imageCount = imageLayers.length;
       const stageCount = stageEls.length;
 
-      // --- Phase 1: Explode images outward (progress 0.00 → 0.30) ---
-      imageLayers.forEach((layer, i) => {
-        const offset = LAYER_OFFSETS[i] ?? LAYER_OFFSETS[LAYER_OFFSETS.length - 1];
-        tl.to(
-          layer,
-          {
-            z: offset.z,
-            xPercent: parseFloat(offset.x),
-            yPercent: parseFloat(offset.y),
-            rotationY: offset.rotateY,
-            rotationX: offset.rotateX,
-            opacity: 1 - i * 0.12,
-            duration: 0.30,
-            ease: "power2.inOut",
-          },
-          0 // all start at timeline position 0
-        );
-      });
-
-      // --- Phase 2: Hold exploded, subtle drift (progress 0.30 → 0.70) ---
-      imageLayers.forEach((layer, i) => {
-        const offset = LAYER_OFFSETS[i] ?? LAYER_OFFSETS[LAYER_OFFSETS.length - 1];
-        tl.to(
-          layer,
-          {
-            z: offset.z + (i % 2 === 0 ? 15 : -15),
-            rotationY: offset.rotateY + (i % 2 === 0 ? 2 : -2),
-            duration: 0.40,
-            ease: "none",
-          },
-          0.30
-        );
-      });
-
-      // --- Phase 3: Collapse back (progress 0.70 → 1.00) ---
-      imageLayers.forEach((layer) => {
-        tl.to(
-          layer,
-          {
-            z: 0,
-            xPercent: 0,
-            yPercent: 0,
-            rotationY: 0,
-            rotationX: 0,
-            opacity: 1,
-            duration: 0.30,
-            ease: "power2.inOut",
-          },
-          0.70
-        );
-      });
-
-      // --- Text crossfades: distribute evenly across timeline ---
+      // --- Sync Text & Images: distribute evenly across timeline ---
       const stageDuration = 1 / stageCount;
 
       stageEls.forEach((stage, i) => {
+        const image = imageLayers[i]; // Corresponding image
+
         const fadeInStart = i * stageDuration;
         const fadeInEnd = fadeInStart + stageDuration * 0.25;
         const holdEnd = fadeInStart + stageDuration * 0.75;
         const fadeOutEnd = fadeInStart + stageDuration;
 
+        // 1. Animate Text Stage
         if (i === 0) {
           // First stage: already visible, hold then fade out
           tl.to(
             stage,
-            {
-              opacity: 1,
-              y: 0,
-              duration: holdEnd,
-              ease: "none",
-            },
+            { opacity: 1, y: 0, duration: holdEnd, ease: "none" },
             0
           );
           if (stageCount > 1) {
             tl.to(
               stage,
-              {
-                opacity: 0,
-                y: -10,
-                duration: fadeOutEnd - holdEnd,
-                ease: "power2.in",
-              },
+              { opacity: 0, y: -10, duration: fadeOutEnd - holdEnd, ease: "power2.in" },
               holdEnd
             );
           }
@@ -192,12 +121,7 @@ export default function PinnedShowcase({
           tl.fromTo(
             stage,
             { opacity: 0, y: 12 },
-            {
-              opacity: 1,
-              y: 0,
-              duration: fadeInEnd - fadeInStart,
-              ease: "power2.out",
-            },
+            { opacity: 1, y: 0, duration: fadeInEnd - fadeInStart, ease: "power2.out" },
             fadeInStart
           );
         } else {
@@ -205,24 +129,51 @@ export default function PinnedShowcase({
           tl.fromTo(
             stage,
             { opacity: 0, y: 12 },
-            {
-              opacity: 1,
-              y: 0,
-              duration: fadeInEnd - fadeInStart,
-              ease: "power2.out",
-            },
+            { opacity: 1, y: 0, duration: fadeInEnd - fadeInStart, ease: "power2.out" },
             fadeInStart
           );
           tl.to(
             stage,
-            {
-              opacity: 0,
-              y: -10,
-              duration: fadeOutEnd - holdEnd,
-              ease: "power2.in",
-            },
+            { opacity: 0, y: -10, duration: fadeOutEnd - holdEnd, ease: "power2.in" },
             holdEnd
           );
+        }
+
+        // 2. Animate Corresponding Image
+        if (image) {
+          if (i === 0) {
+            tl.to(
+              image,
+              { opacity: 1, scale: 1, duration: holdEnd, ease: "none" },
+              0
+            );
+            if (stageCount > 1) {
+              tl.to(
+                image,
+                { opacity: 0, scale: 0.95, duration: fadeOutEnd - holdEnd, ease: "power2.inOut" },
+                holdEnd
+              );
+            }
+          } else if (i === stageCount - 1) {
+            tl.fromTo(
+              image,
+              { opacity: 0, scale: 1.05 },
+              { opacity: 1, scale: 1, duration: fadeInEnd - fadeInStart, ease: "power2.inOut" },
+              fadeInStart
+            );
+          } else {
+            tl.fromTo(
+              image,
+              { opacity: 0, scale: 1.05 },
+              { opacity: 1, scale: 1, duration: fadeInEnd - fadeInStart, ease: "power2.inOut" },
+              fadeInStart
+            );
+            tl.to(
+              image,
+              { opacity: 0, scale: 0.95, duration: fadeOutEnd - holdEnd, ease: "power2.inOut" },
+              holdEnd
+            );
+          }
         }
       });
 

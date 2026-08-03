@@ -42,6 +42,11 @@
   transform-style: preserve-3d;
   backface-visibility: hidden;
   contain: layout style;
+  opacity: 0;
+}
+
+.pinned-showcase__image-layer:first-child {
+  opacity: 1;
 }
 
 .pinned-showcase__image {
