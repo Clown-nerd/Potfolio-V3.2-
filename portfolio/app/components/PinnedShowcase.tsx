@@ -144,33 +144,33 @@ export default function PinnedShowcase({
           if (i === 0) {
             tl.to(
               image,
-              { opacity: 1, scale: 1, duration: holdEnd, ease: "none" },
+              { opacity: 1, scale: 1, y: 0, duration: holdEnd, ease: "none" },
               0
             );
             if (stageCount > 1) {
               tl.to(
                 image,
-                { opacity: 0, scale: 0.95, duration: fadeOutEnd - holdEnd, ease: "power2.inOut" },
+                { opacity: 0, scale: 0.97, duration: fadeOutEnd - holdEnd, ease: "power2.inOut" },
                 holdEnd
               );
             }
           } else if (i === stageCount - 1) {
             tl.fromTo(
               image,
-              { opacity: 0, scale: 1.05 },
-              { opacity: 1, scale: 1, duration: fadeInEnd - fadeInStart, ease: "power2.inOut" },
+              { opacity: 0, scale: 1.05, y: 10 },
+              { opacity: 1, scale: 1, y: 0, duration: fadeInEnd - fadeInStart, ease: "power2.inOut" },
               fadeInStart
             );
           } else {
             tl.fromTo(
               image,
-              { opacity: 0, scale: 1.05 },
-              { opacity: 1, scale: 1, duration: fadeInEnd - fadeInStart, ease: "power2.inOut" },
+              { opacity: 0, scale: 1.05, y: 10 },
+              { opacity: 1, scale: 1, y: 0, duration: fadeInEnd - fadeInStart, ease: "power2.inOut" },
               fadeInStart
             );
             tl.to(
               image,
-              { opacity: 0, scale: 0.95, duration: fadeOutEnd - holdEnd, ease: "power2.inOut" },
+              { opacity: 0, scale: 0.97, duration: fadeOutEnd - holdEnd, ease: "power2.inOut" },
               holdEnd
             );
           }
@@ -238,7 +238,6 @@ export default function PinnedShowcase({
             <div
               key={src}
               className="pinned-showcase__image-layer"
-              style={{ zIndex: images.length - i }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
