@@ -27,7 +27,7 @@ export default function Contact() {
             style={{ marginTop: "var(--space-3xl)" }}
           >
             <a
-              href="mailto:nicknyagol@gmail.com"
+              href="mailto:ochiengnyagol@proton.me"
               className="contact-link-item"
               id="contact-email"
             >
@@ -36,7 +36,7 @@ export default function Contact() {
                 <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
               </svg>
               <div>
-                <p className="contact-link-text">nicknyagol@gmail.com</p>
+                <p className="contact-link-text">ochiengnyagol@proton.me</p>
                 <p className="contact-link-label">Email — best for project inquiries</p>
               </div>
             </a>

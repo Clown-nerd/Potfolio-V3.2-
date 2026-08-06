@@ -51,7 +51,8 @@ const stack: StackGroup[] = [
       { name: "Azure VM", note: "Heavy builds, CI, overflow compute", logo: "azure.svg" },
       { name: "Docker", note: "Containerized deployments", logo: "docker.svg" },
       { name: "GitHub Actions", note: "CI/CD pipelines", logo: "githubactions.svg" },
-      { name: "Ubuntu", note: "Dev and server OS", logo: "ubuntu.svg" },
+      { name: "Fedora", note: "Dev OS", logo: "fedora.svg" },
+      { name: "Debian", note: "Server OS", logo: "debian.svg" },
     ],
   },
   {
