@@ -90,18 +90,15 @@ export default function PinnedShowcase({
       const imageCount = imageLayers.length;
       const stageCount = stageEls.length;
 
-      // --- Sync Text & Images: distribute evenly across timeline ---
+      // --- Text stages: distribute evenly across timeline ---
       const stageDuration = 1 / stageCount;
 
       stageEls.forEach((stage, i) => {
-        const image = imageLayers[i]; // Corresponding image
-
         const fadeInStart = i * stageDuration;
         const fadeInEnd = fadeInStart + stageDuration * 0.25;
         const holdEnd = fadeInStart + stageDuration * 0.75;
         const fadeOutEnd = fadeInStart + stageDuration;
 
-        // 1. Animate Text Stage
         if (i === 0) {
           // First stage: already visible, hold then fade out
           tl.to(
@@ -138,42 +135,54 @@ export default function PinnedShowcase({
             holdEnd
           );
         }
+      });
 
-        // 2. Animate Corresponding Image
-        if (image) {
-          if (i === 0) {
+      // --- Images: independent segments based on imageCount ---
+      // Same fadeIn / hold / fadeOut pattern as the text stages,
+      // but segmented by imageCount, NOT stageCount.
+      const imgSegment = 1 / imageCount;
+
+      imageLayers.forEach((image, i) => {
+        const imgFadeInStart = i * imgSegment;
+        const imgFadeInEnd = imgFadeInStart + imgSegment * 0.2;
+        const imgHoldEnd = imgFadeInStart + imgSegment * 0.8;
+        const imgFadeOutEnd = imgFadeInStart + imgSegment;
+
+        if (i === 0) {
+          // First image: already visible via CSS, hold then crossfade out
+          tl.to(
+            image,
+            { opacity: 1, scale: 1, y: 0, duration: imgHoldEnd, ease: "none" },
+            0
+          );
+          if (imageCount > 1) {
             tl.to(
               image,
-              { opacity: 1, scale: 1, y: 0, duration: holdEnd, ease: "none" },
-              0
-            );
-            if (stageCount > 1) {
-              tl.to(
-                image,
-                { opacity: 0, scale: 0.97, duration: fadeOutEnd - holdEnd, ease: "power2.inOut" },
-                holdEnd
-              );
-            }
-          } else if (i === stageCount - 1) {
-            tl.fromTo(
-              image,
-              { opacity: 0, scale: 1.05, y: 10 },
-              { opacity: 1, scale: 1, y: 0, duration: fadeInEnd - fadeInStart, ease: "power2.inOut" },
-              fadeInStart
-            );
-          } else {
-            tl.fromTo(
-              image,
-              { opacity: 0, scale: 1.05, y: 10 },
-              { opacity: 1, scale: 1, y: 0, duration: fadeInEnd - fadeInStart, ease: "power2.inOut" },
-              fadeInStart
-            );
-            tl.to(
-              image,
-              { opacity: 0, scale: 0.97, duration: fadeOutEnd - holdEnd, ease: "power2.inOut" },
-              holdEnd
+              { opacity: 0, scale: 0.97, duration: imgFadeOutEnd - imgHoldEnd, ease: "power2.inOut" },
+              imgHoldEnd
             );
           }
+        } else if (i === imageCount - 1) {
+          // Last image: fade in and hold to the end
+          tl.fromTo(
+            image,
+            { opacity: 0, scale: 1.05, y: 10 },
+            { opacity: 1, scale: 1, y: 0, duration: imgFadeInEnd - imgFadeInStart, ease: "power2.inOut" },
+            imgFadeInStart
+          );
+        } else {
+          // Middle images: fade in, hold, fade out
+          tl.fromTo(
+            image,
+            { opacity: 0, scale: 1.05, y: 10 },
+            { opacity: 1, scale: 1, y: 0, duration: imgFadeInEnd - imgFadeInStart, ease: "power2.inOut" },
+            imgFadeInStart
+          );
+          tl.to(
+            image,
+            { opacity: 0, scale: 0.97, duration: imgFadeOutEnd - imgHoldEnd, ease: "power2.inOut" },
+            imgHoldEnd
+          );
         }
       });
 

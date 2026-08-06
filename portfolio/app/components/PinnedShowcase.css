@@ -23,13 +23,11 @@
   align-items: center;
 }
 
-/* --- Visual panel (perspective container) --- */
+/* --- Visual panel --- */
 .pinned-showcase__visuals {
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 10;
-  perspective: 1200px;
-  perspective-origin: 50% 50%;
 }
 
 .pinned-showcase__image-layer {
@@ -38,9 +36,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Initial state — GSAP will animate from here */
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
   contain: layout style;
   opacity: 0;
 }
@@ -134,7 +129,6 @@
 }
 
 .pinned-showcase--reduced .pinned-showcase__visuals {
-  perspective: none;
   aspect-ratio: auto;
   display: flex;
   flex-direction: column;
